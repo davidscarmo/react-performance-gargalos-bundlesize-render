@@ -18,7 +18,7 @@ export function Menu({
           isSelected={selectedItem?.id === item.id}
           isHighlighted={highlightedIndex === index}
         >
-          <SearchResults name={item.name} />
+          <MemoizedSearchResults name={item.name} />
         </ListItem>
       ))}
     </ul>
@@ -74,4 +74,4 @@ const SearchResults = ({ name }) => {
   );
 };
 
-
+const MemoizedSearchResults = React.memo(SearchResults)

@@ -1,9 +1,28 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { NavBar } from "./Components/Navbar/NavBar";
-import Today from "./Pages/Today";
-import Search from "./Pages/Search";
-import Account from "./Pages/Account";
+
+const Today = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Today" */
+    /* webpackPrefetch: true */
+    "./Pages/Today"
+  )
+);
+const Search = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Search" */ 
+    /* webpackPrefetch: true */
+    "./Pages/Search"
+  )
+);
+const Account = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Account" */
+    /* webpackPrefetch: true */
+    "./Pages/Account"
+  )
+);
 
 function App() {
   return (
